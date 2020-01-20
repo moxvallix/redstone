@@ -1,69 +1,21 @@
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=1] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=2] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=3] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=4] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=5] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=6] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=7] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=8] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=9] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=10] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=11] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=12] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=13] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=14] run tag @s add red_powered
-execute if block ~ ~ ~1 minecraft:redstone_wire[power=15] run tag @s add red_powered
-
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=1] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=2] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=3] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=4] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=5] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=6] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=7] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=8] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=9] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=10] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=11] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=12] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=13] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=14] run tag @s add red_powered
-execute if block ~ ~ ~-1 minecraft:redstone_wire[power=15] run tag @s add red_powered
-
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=1] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=2] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=3] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=4] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=5] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=6] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=7] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=8] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=9] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=10] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=11] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=12] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=13] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=14] run tag @s add red_powered
-execute if block ~-1 ~ ~ minecraft:redstone_wire[power=15] run tag @s add red_powered
-
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=1] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=2] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=3] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=4] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=5] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=6] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=7] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=8] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=9] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=10] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=11] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=12] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=13] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=14] run tag @s add red_powered
-execute if block ~1 ~ ~ minecraft:redstone_wire[power=15] run tag @s add red_powered
-
+#Power Detection
+execute if block ~ ~ ~1 minecraft:redstone_wire[south=side] unless block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s add red_powered
+execute if block ~ ~ ~-1 minecraft:redstone_wire[north=side] unless block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s add red_powered
+execute if block ~-1 ~ ~ minecraft:redstone_wire[west=side] unless block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s add red_powered
+execute if block ~1 ~ ~ minecraft:redstone_wire[east=side] unless block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s add red_powered
 
 execute if block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s remove red_powered
 execute if block ~ ~ ~-1 minecraft:redstone_wire[power=0] run tag @s remove red_powered
 execute if block ~1 ~ ~ minecraft:redstone_wire[power=0] run tag @s remove red_powered
 execute if block ~-1 ~ ~ minecraft:redstone_wire[power=0] run tag @s remove red_powered
+
+#Power Direction
+execute if block ~ ~ ~1 minecraft:redstone_wire[south=side] unless block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s add powered_south
+execute if block ~ ~ ~-1 minecraft:redstone_wire[north=side] unless block ~ ~ ~-1 minecraft:redstone_wire[power=0] run tag @s add powered_north
+execute if block ~-1 ~ ~ minecraft:redstone_wire[west=side] unless block ~-1 ~ ~ minecraft:redstone_wire[power=0] run tag @s add powered_west
+execute if block ~1 ~ ~ minecraft:redstone_wire[east=side] unless block ~1 ~ ~ minecraft:redstone_wire[power=0] run tag @s add powered_east
+
+execute if block ~ ~ ~1 minecraft:redstone_wire[power=0] run tag @s remove powered_south
+execute if block ~ ~ ~-1 minecraft:redstone_wire[power=0] run tag @s remove powered_north
+execute if block ~-1 ~ ~ minecraft:redstone_wire[power=0] run tag @s remove powered_west
+execute if block ~1 ~ ~ minecraft:redstone_wire[power=0] run tag @s remove powered_east

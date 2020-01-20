@@ -20,10 +20,10 @@ execute if block ~-1 ~ ~ minecraft:repeater[powered=true,facing=east,delay=1] ru
 execute if block ~1 ~ ~ minecraft:repeater[powered=true,facing=west,delay=1] run setblock ~1 ~ ~ minecraft:repeater[powered=false,facing=west,delay=1]
 
 #Redstone
-execute if block ~ ~ ~1 minecraft:redstone_wire run setblock ~ ~ ~1 minecraft:redstone_wire[power=0]
-execute if block ~ ~ ~-1 minecraft:redstone_wire run setblock ~ ~ ~-1 minecraft:redstone_wire[power=0]
-execute if block ~-1 ~ ~ minecraft:redstone_wire run setblock ~-1 ~ ~ minecraft:redstone_wire[power=0]
-execute if block ~1 ~ ~ minecraft:redstone_wire run setblock ~1 ~ ~ minecraft:redstone_wire[power=0]
+execute if block ~ ~ ~1 minecraft:redstone_block run setblock ~ ~ ~1 minecraft:redstone_wire[power=0,south=side]
+execute if block ~ ~ ~-1 minecraft:redstone_block run setblock ~ ~ ~-1 minecraft:redstone_wire[power=0,north=side]
+execute if block ~-1 ~ ~ minecraft:redstone_block run setblock ~-1 ~ ~ minecraft:redstone_wire[power=0,west=side]
+execute if block ~1 ~ ~ minecraft:redstone_block run setblock ~1 ~ ~ minecraft:redstone_wire[power=0,east=side]
 
 #Comparators
 execute if block ~ ~ ~1 minecraft:comparator[powered=true,facing=north] run setblock ~ ~ ~1 minecraft:comparator[powered=false,facing=north]
