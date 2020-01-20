@@ -1,4 +1,4 @@
-Redstone Interactions: Alpha 1.0
+Redstone Interactions: Alpha 1.1
 by Moxvallix
 https://namemc.com/profile/Moxvallix
 moxvallix@gmail.com
