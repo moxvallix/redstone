@@ -22,6 +22,12 @@ execute if block ~ ~ ~-1 minecraft:lever run tag @s add nearby_north
 execute if block ~-1 ~ ~ minecraft:lever run tag @s add nearby_west
 execute if block ~1 ~ ~ minecraft:lever run tag @s add nearby_east
 
+#Redstone Integrations Block
+execute at @s positioned ~ ~ ~1 if entity @e[tag=use_redstone,distance=..0.9,limit=1] run tag @s add nearby_south
+execute at @s positioned ~ ~ ~-1 if entity @e[tag=use_redstone,distance=..0.9,limit=1] run tag @s add nearby_north
+execute at @s positioned ~-1 ~ ~ if entity @e[tag=use_redstone,distance=..0.9,limit=1] run tag @s add nearby_west
+execute at @s positioned ~1 ~ ~ if entity @e[tag=use_redstone,distance=..0.9,limit=1] run tag @s add nearby_east
+
 #Remove Tag
 execute if block ~ ~ ~1 minecraft:air run tag @s remove nearby_south
 execute if block ~ ~ ~-1 minecraft:air run tag @s remove nearby_north
